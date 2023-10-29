@@ -29,13 +29,14 @@ export function Form() {
 
   //   From start
   const [totalPlayValue, setTotalPlayValue] = useState(0);
-  const [wining, setWining] = useState(0);
+  // const [wining, setWining] = useState(0);
   const [oldValue, setOldValue] = useState(0);
+  let [operator, setOperator] = useState("");
+  // function handleOnChange(e) {
+  //   e.preventDefault();
+  //   const value = { totalPlayValue, wining, oldValue };
+  // }
 
-  function handleOnChange(e) {
-    e.preventDefault();
-    const value = { totalPlayValue, wining, oldValue };
-  }
   //Form ends
   // section_2 starts
   const [ankValue, setAnkValue] = useState(0);
@@ -54,8 +55,31 @@ export function Form() {
   // section_1 starts
   const totalPlayPercent = Math.floor(totalPlayValue / 10) * 1;
   const balance = totalPlayValue - totalPlayPercent;
-  const bal_win = Math.abs(balance - grandTotalWining);
-  const TotalCalc = Math.abs(bal_win - oldValue);
+  let bal_win = 0;
+  if (balance > grandTotalWining) {
+    bal_win = balance - grandTotalWining;
+  } else {
+    bal_win = grandTotalWining - balance;
+  }
+  let TotalCalc = 0;
+  // let operator = "+";
+  // if (operator == "-") {
+  //   TotalCalc = bal_win - oldValue;
+  // } else if (operator == "+") {
+  //   TotalCalc = bal_win + oldValue;
+  // }
+  // operator = "+";
+  switch (operator) {
+    case "-":
+      TotalCalc = bal_win - oldValue;
+      break;
+    case "+":
+      TotalCalc = parseFloat(bal_win) + parseFloat(oldValue);
+      break;
+    default:
+
+    // Handle invalid operator
+  }
   // section_1 ends
 
   return (
@@ -70,12 +94,9 @@ export function Form() {
         </div>
       </div>
       <div className="form box">
-        <form action="/home" onSubmit={handleOnChange}>
+        <form action="/home">
           <label htmlFor="Name">Name :- </label>
-          <input
-            type="textzzzzzzzzzzzzzzzzzzzzz"
-            onChange={(e) => setMainHeading(e.target.value)}
-          />
+          <input type="text" onChange={(e) => setMainHeading(e.target.value)} />
           <hr />
           <label htmlFor="">Total Play:- </label>
           <input
@@ -89,6 +110,17 @@ export function Form() {
 
           <label htmlFor="">Old Balance:- </label>
           <input type="number" onChange={(e) => setOldValue(e.target.value)} />
+          <hr />
+          <label htmlFor="operator">Choose :- </label>
+
+          <select
+            value={operator}
+            onChange={(e) => setOperator(e.target.value)}
+          >
+            <option value="none">None</option>
+            <option value="+">+ (plus)</option>
+            <option value="-">- (minus)</option>
+          </select>
         </form>
       </div>
       <div className="section_2 box">
@@ -135,9 +167,7 @@ export function Form() {
         <span>{TotalCalc}/-</span>
       </div>
       <div>
-        <marquee behavior="" direction="left">
-          --Suresh Bhai
-        </marquee>
+        <marquee direction="left">--Suresh Bhai</marquee>
       </div>
     </div>
   );
