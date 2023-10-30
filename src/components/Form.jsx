@@ -165,6 +165,11 @@ export function Form() {
         <hr />
         <label htmlFor="Total">Grand Total = </label>
         <span>{TotalCalc}/-</span>
+        <select>
+          <option value="none">None</option>
+          <option value="+">( ➖ ) नावे तुम्ही</option>
+          <option value="-">( ➕ ) जमा तुम्ही </option>
+        </select>
       </div>
       <div>
         <marquee direction="left">--Suresh Bhai</marquee>
