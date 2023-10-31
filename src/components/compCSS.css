@@ -90,3 +90,12 @@ input {
   margin: 4px;
   /* width: 30px; */
 }
+/* 
+.postiveColor {
+  background-color: rgb(0, 250, 25);
+} */
+
+select[value="+"] {
+  background-color: green;
+  color: white; /* Change text color for better contrast */
+}

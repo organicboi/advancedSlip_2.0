@@ -71,10 +71,10 @@ export function Form() {
   // operator = "+";
   switch (operator) {
     case "-":
-      TotalCalc = bal_win - oldValue;
+      TotalCalc = bal_win + oldValue;
       break;
     case "+":
-      TotalCalc = parseFloat(bal_win) + parseFloat(oldValue);
+      TotalCalc = parseFloat(bal_win) - parseFloat(oldValue);
       break;
     default:
 
@@ -167,8 +167,14 @@ export function Form() {
         <span className="totalSpecialStyling">{TotalCalc}/-</span>
         <select>
           <option value="none">None</option>
-          <option value="+">( ➖ ) नावे तुम्ही</option>
-          <option value="-">( ➕ ) जमा तुम्ही </option>
+          <option value="+" className="postiveColor">
+            {" "}
+            मी देणे 🟢{" "}
+          </option>
+          <option value="-" className="negativeColor">
+            {" "}
+            तुम्ही देणे 🔴{" "}
+          </option>
         </select>
       </div>
       <div>
