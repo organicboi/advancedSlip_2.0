@@ -71,10 +71,12 @@ export function Form() {
   // operator = "+";
   switch (operator) {
     case "-":
-      TotalCalc = bal_win + oldValue;
+      TotalCalc = parseFloat(bal_win) + parseFloat(oldValue);
+
       break;
     case "+":
-      TotalCalc = parseFloat(bal_win) - parseFloat(oldValue);
+      TotalCalc = bal_win - oldValue;
+
       break;
     default:
 
