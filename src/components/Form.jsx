@@ -118,8 +118,8 @@ export function Form() {
             onChange={(e) => setOperator(e.target.value)}
           >
             <option value="none">None</option>
-            <option value="+">+ (plus)</option>
-            <option value="-">- (minus)</option>
+            <option value="+">( ➕ ) plus</option>
+            <option value="-">( ➖ ) minus</option>
           </select>
         </form>
       </div>
@@ -143,7 +143,7 @@ export function Form() {
         <hr />
         <label htmlFor="GrandTotal">Total Wining :- </label>
 
-        <span>{grandTotalWining}/-</span>
+        <span className="totalSpecialStyling">{grandTotalWining}/-</span>
       </div>
       <div className="section_1 box">
         <label htmlFor="totalPlay">Total Play = </label>
@@ -164,7 +164,7 @@ export function Form() {
         <span>{oldValue}</span>
         <hr />
         <label htmlFor="Total">Grand Total = </label>
-        <span>{TotalCalc}/-</span>
+        <span className="totalSpecialStyling">{TotalCalc}/-</span>
         <select>
           <option value="none">None</option>
           <option value="+">( ➖ ) नावे तुम्ही</option>

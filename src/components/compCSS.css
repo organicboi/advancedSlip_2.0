@@ -1,7 +1,7 @@
 .main_container {
   display: grid;
-  gap: 18px;
-  padding: 10px;
+  gap: 10px;
+  padding: 0 3px 3px 3px;
   /* border: 3px gray solid; */
 }
 .container {
@@ -33,9 +33,9 @@
   display: flex;
   color: rebeccapurple;
   margin: 10px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   gap: 8rem;
-
+  /* justify-content: space-around; */
   /* align-items: last baseline; */
 }
 .date > input {
@@ -48,7 +48,7 @@
   border: 4px solid brown;
 }
 .box {
-  padding: 10px;
+  padding: 7px;
   border: 3px gray solid;
   background-color: #ece3ce;
 }
@@ -79,4 +79,14 @@ select {
 
 input {
   width: auto;
+}
+
+.totalSpecialStyling {
+  color: gold;
+  background-color: rgb(0, 0, 0);
+  /* border: 3px solid ; */
+  border-radius: 8px;
+  padding: 6px;
+  margin: 4px;
+  /* width: 30px; */
 }
